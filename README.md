@@ -47,6 +47,11 @@ render(
 
 Full example of Edux and Redux integration you can see in [examples/async](examples/async/src) folder. This example is ported from the official  [Redux's example](https://github.com/reactjs/redux/tree/d5d1572cba55942d571b4b52cd12e5045142b9ff/examples/async/src), so you can compare both implementations.
 
+### Examples
+
+* [Async](https://dogada.github.io/edux/) ([source](examples/async))
+
+
 ### Installation
 
 To install the stable version:
