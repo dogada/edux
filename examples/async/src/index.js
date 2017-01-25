@@ -19,8 +19,11 @@ let enhancer = applyMiddleware(...middleware)
 const devTools = typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
 if (devTools) enhancer = devTools({actionCreators})(enhancer)
 
+/* eslint-disable */
 const futureDispatch = (action) => store.dispatch(action)
 const futureGetState = () => store.getState()
+/* eslint-disable */
+
 const reducer = createReducer(changes, futureDispatch, futureGetState)
 const store = createStore(reducer, preloadedState, enhancer)
 

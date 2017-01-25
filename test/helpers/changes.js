@@ -1,6 +1,6 @@
 import { actionCreator } from '../../src/index'
 
-export const defaultState = []
+export const DEFAULT_STATE = []
 
 function nextId (state) {
   return Math.max(0, ...state.map(todo => todo.id)) + 1

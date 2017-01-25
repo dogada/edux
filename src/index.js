@@ -2,7 +2,7 @@
  Automatically generate Redux actions and reducers from changes files and hence reduce code duplication and need to use action types constants and switch statements.
  */
 
-const DEFAULT_STATE_KEY = 'defaultState'
+const DEFAULT_STATE_KEY = 'DEFAULT_STATE'
 
 /**
   Make action creator for each change and assign it as `change.__eduxActionCreator`.
@@ -75,8 +75,8 @@ function walkState (path, state, action, changes, thunk) {
 }
 
 function initState (changes, state) {
-  const defaultState = changes[DEFAULT_STATE_KEY]
-  // if we have defaultState property don't dive dipper
+  let defaultState = changes[DEFAULT_STATE_KEY]
+  // if we have DEFAULT_STATE property don't dive dipper
   if (typeof defaultState !== 'undefined') return state || defaultState
 
   for (let key in changes) {

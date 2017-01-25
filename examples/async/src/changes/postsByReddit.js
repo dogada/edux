@@ -1,6 +1,6 @@
 import { actionCreator } from 'edux'
 
-export const defaultState = {}
+export const DEFAULT_STATE = {}
 
 const defaultRedditState = {
   isFetching: false,

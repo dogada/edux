@@ -23,7 +23,7 @@ describe.only('createReducer', () => {
 
   it('supports changes with single level of nesting and default value', () => {
     const changes = {
-      defaultState: 42,
+      DEFAULT_STATE: 42,
       increment: (state) => state + 1,
       decrement: (state) => state - 1
     }
@@ -40,7 +40,7 @@ describe.only('createReducer', () => {
   it('supports composite reducer with and without default state', () => {
     const changes = {
       counter: {
-        defaultState: 0,
+        DEFAULT_STATE: 0,
         increment: (state) => state + 1
       },
       stack: {
@@ -91,18 +91,18 @@ describe.only('createReducer', () => {
     expect(s0).toEqual({ })
   })
 
-  it('ignores all props which are not a function but handles defaultState', () => {
+  it('ignores all props which are not a function but handles DEFAULT_STATE', () => {
     const reducer = createReducer({
       fake: true,
       broken: 'string',
       another: { nested: 'object' },
-      defaultState: [1, 2, 3],
+      DEFAULT_STATE: [1, 2, 3],
       push: (state, value) => [...state, value]
     })
 
     const s0 = reducer(undefined, { type: '@@INIT' })
     expect(s0).toEqual([1, 2, 3])
-    // defaultState should not overwrite preloadedState
+    // DEFAULT_STATE should not overwrite preloadedState
     const s1 = reducer([7], { type: '@@INIT' })
     expect(s1).toEqual([7])
   })
@@ -118,9 +118,9 @@ describe.only('createReducer', () => {
     expect(s0).toEqual({'other': 'value'})
   })
 
-  it('should never return undefined for primitive defaultState', () => {
+  it('should never return undefined for primitive DEFAULT_STATE', () => {
     const changes = {
-      defaultState: 0,
+      DEFAULT_STATE: 0,
       increment: (state) => state + 1
     }
     const reducer = createReducer(changes)
@@ -131,10 +131,10 @@ describe.only('createReducer', () => {
     expect(s1).toEqual(0)
   })
 
-  it('should never return undefined when defaultState is object', () => {
+  it('should never return undefined when DEFAULT_STATE is object', () => {
     const changes = {
       counter: {
-        defaultState: 0,
+        DEFAULT_STATE: 0,
         increment: (state) => state + 1
       }
     }

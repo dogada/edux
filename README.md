@@ -6,13 +6,15 @@ You don't need to add constants and share them between actions and reducers. You
 
 Edux and Redux works well together. Redux state is single source of truth on data level. Edux changes are single source of truth on logic level.
 
+Edux processes actions with O(1) speed instead of Redux's O(N) where N is number of reducers.
+
 Bellow is an example of using Edux's changes for creating standard Redux store:
 
 ```js
 // changes.js
 import { actionCreator } from 'edux'
 
-export const defaultState = []
+export const DEFAULT_STATE = []
 
 export function addTodo (state, text) {
   return [...state, {id: nextId(state), text}]
