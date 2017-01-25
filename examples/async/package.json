@@ -9,7 +9,7 @@
   },
   "homepage": "https://dogada.github.io/edux",
   "dependencies": {
-    "edux": "^0.1.0",
+    "edux": "latest",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
     "react-redux": "^4.4.5",
