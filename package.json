@@ -1,11 +1,17 @@
 {
   "name": "edux",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Edux is DRY version of Redux (no constants and switches, actions and reducers are generated from changes).",
   "browser": "dist/edux.js",
   "main": "lib/index.js",
   "module": "es/index.js",
   "jsnext:main": "es/index.js",
+  "files": [
+    "dist",
+    "lib",
+    "es",
+    "src"
+  ],
   "scripts": {
     "clean": "rimraf lib dist es coverage",
     "lint": "standard",
